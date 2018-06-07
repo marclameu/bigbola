@@ -16,13 +16,10 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30);
-            $table->int('team_id');
-            $table->int('stage_id');
+            $table->integer('team_id')->unsigned();
+            $table->integer('stage_id')->unsigned();
 
             $table->timestamps();
-
-            $table->foreign('team_id')->references('id')->on('teams');
-            $table->foreign('stage_id')->references('id')->on('stages');
 
         });
     }

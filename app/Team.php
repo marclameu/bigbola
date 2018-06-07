@@ -13,4 +13,9 @@ class Team extends Model
 
     public function stages(){
         return $this->hasManyThrough('App\Stage', 'App\Group');
-    }}
+    }
+
+    public function championships(){
+        return $this->belongsToMany('App\Championship');
+    }
+}

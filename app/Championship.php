@@ -14,4 +14,8 @@ class Championship extends Model
     public function stages(){
         return $this->hasMany('App\Stage');
     }
+
+    public function teams(){
+        return $this->belongsToMany('App\Team');
+    }
 }

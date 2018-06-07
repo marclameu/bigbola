@@ -14,8 +14,8 @@ class CreateBallUserTable extends Migration
     public function up()
     {
         Schema::create('ball_user', function (Blueprint $table) {
-            $table->int('user_id');
-            $table->int('ball_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('ball_id')->unsigned();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

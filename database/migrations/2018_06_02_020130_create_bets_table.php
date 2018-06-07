@@ -18,9 +18,9 @@ class CreateBetsTable extends Migration
             $table->double('score_team_home', 8, 2);
             $table->double('score_team_alway', 8, 2);
             $table->double('points', 8, 2);
-            $table->int('match_id');
-            $table->int('user_id');
-            $table->int('ball_id');
+            $table->integer('match_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('ball_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('match_id')->references('id')->on('matches');

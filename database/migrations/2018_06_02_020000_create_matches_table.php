@@ -18,15 +18,10 @@ class CreateMatchesTable extends Migration
             $table->decimal('team_home_score', 8,2);
             $table->decimal('team_alway_score', 8,2);
             $table->datetime('date_match');
-            $table->int('team_home_id');
-            $table->int('team_alway_id');
-            $table->int('stage_id');
+            $table->integer('team_home_id')->unsigned();
+            $table->integer('team_alway_id')->unsigned();
+            $table->integer('stage_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('team_home_id')->references('id')->on('teams');
-            $table->foreign('team_alway_id')->references('id')->on('teams');
-            $table->foreign('stage_id')->references('id')->on('stages');
-
 
         });
     }
